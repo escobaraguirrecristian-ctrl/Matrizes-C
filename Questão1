@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main () {
+    int matriz [3] [3];
+    int i, j;
+
+    // Lendo os dados da matriz
+    printf("Digite os elementos da matriz 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Exibindo a matriz em formato de tabela
+    printf("\n--- Matriz 3x3 ---\n");
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {      
+            // Imprime o número alinhado com 4 espaços
+            printf("%4d", matriz[i][j]); 
+        }
+        printf("\n"); 
+    }
+    printf("--------------\n");
+
+    return 0;
+}
