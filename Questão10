@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main () {
+    int matrizA[3][3], matrizB[3][3];
+    int i, j;
+    int iguais = 1; // 1 significa que são iguais, 0 significa diferentes
+
+    // Lendo a Matriz A
+    printf("Digite os elementos da primeira matriz (A) 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("A[%d][%d]: ", i, j);
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+
+    // Lendo a Matriz B
+    printf("\nDigite os elementos da segunda matriz (B) 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("B[%d][%d]: ", i, j);
+            scanf("%d", &matrizB[i][j]);
+        }
+    }
+
+    // Comparando os elementos correspondentes
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {      
+            if (matrizA[i][j] != matrizB[i][j]) {
+                iguais = 0;
+            }
+        }
+    }
+
+    // Exibindo o resultado
+    if (iguais == 1) {
+        printf("\nAs matrizes sao IGUAIS.\n");
+    } else {
+        printf("\nAs matrizes sao DIFERENTES.\n");
+    }
+
+    return 0;
+}
