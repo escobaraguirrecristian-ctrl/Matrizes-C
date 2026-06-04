@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main () {
+    int matrizA[3][3], matrizB[3][3], matrizC[3][3];
+    int i, j, k; // Adicionamos a variável 'k' para o terceiro laço
+
+    // Lendo a Matriz A
+    printf("Digite os elementos da matriz A 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("A[%d][%d]: ", i, j);
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+
+    // Lendo a Matriz B
+    printf("\nDigite os elementos da matriz B 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("B[%d][%d]: ", i, j);
+            scanf("%d", &matrizB[i][j]);
+        }
+    }
+
+    // Multiplicação de Matrizes
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {
+            matrizC[i][j] = 0; // Inicializa a posição com zero antes de somar
+            for(k=0; k<3; k++) {
+                // Linha de A vezes Coluna de B
+                matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+            }
+        }
+    }
+
+    // Exibindo a matriz resultante C
+    printf("\n--- Matriz Resultante (A x B) ---\n");
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {      
+            printf("%4d", matrizC[i][j]); 
+        }
+        printf("\n"); 
+    }
+    printf("--------------------------------\n");
+
+    return 0;
+}
