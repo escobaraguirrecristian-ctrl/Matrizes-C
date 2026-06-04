@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main () {
+    int matriz [3] [3];
+    int i, j;
+    int somaDiagonal = 0;
+
+    // Lendo os dados da matriz
+    printf("Digite os elementos da matriz 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Somando apenas onde i == j
+    for(i=0; i<3; i++) {
+        somaDiagonal += matriz[i][i]; 
+    }
+
+    printf("\nA soma da diagonal principal e: %d\n", somaDiagonal);
+
+    return 0;
+}
