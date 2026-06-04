@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main () {
+    int matriz [3] [3];
+    int i, j;
+    int soma = 0; // Variável para acumular o total
+
+    // Lendo os dados da matriz
+    printf("Digite os elementos da matriz 3x3:\n");
+    for(i=0; i<3; i++) {          
+        for(j=0; j<3; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Calculando a soma de todos os elementos
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {      
+            soma = soma + matriz[i][j]; // ou soma += matriz[i][j];
+        }
+    }
+
+    printf("\nA soma de todos os elementos e: %d\n", soma);
+
+    return 0;
+}
